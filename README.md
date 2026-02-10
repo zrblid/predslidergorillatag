@@ -36,6 +36,9 @@ If build dependency downloads fail, verify your proxy/network allows:
 
 ## Build on Volt.build (APK output)
 
+If Volt reports `UserError: index.html not found`, keep this repository root `index.html` file in place.
+It acts as a static-site placeholder while the real output is still the Android APK artifact (`dist/app-release.apk`).
+
 Use these settings in Volt.build:
 
 - **Build command**: `bash scripts/volt-build.sh`

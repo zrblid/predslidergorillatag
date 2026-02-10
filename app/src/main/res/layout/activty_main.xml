@@ -1,25 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="20dp"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/ipBox"
-        android:hint="Quest IP Address"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-    <SeekBar
-        android:id="@+id/predSlider"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/ipBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Quest IP Address (e.g. 192.168.1.22)"
+            android:inputType="text"
+            android:singleLine="true" />
 
-    <TextView
-        android:id="@+id/predValue"
-        android:text="Predictions: 40ms"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/wifiNameBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Wi-Fi name (optional)"
+            android:inputType="text"
+            android:singleLine="true" />
 
-    <Button
+        <CheckBox
+            android:id="@+id/confirmWifiCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:checked="true"
+            android:text="Ask before applying if Wi-Fi should be confirmed" />
+
+        <TextView
+            android:id="@+id/hzValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Refresh rate floor: 70Hz"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/predValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Predictions: 40ms" />
+
+        <SeekBar
+            android:id="@+id/predSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/applyBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Apply" />
+
+        <TextView
+            android:id="@+id/statusValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Status: idle" />
+
+    </LinearLayout>
+</ScrollView>

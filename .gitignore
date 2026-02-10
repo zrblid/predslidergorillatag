@@ -5,3 +5,5 @@
 /captures/
 **/build/
 .DS_Store
+
+*.zip

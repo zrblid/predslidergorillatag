@@ -68,3 +68,62 @@ Optional custom output filename:
 ```bash
 bash scripts/package-zip.sh my-app.zip
 ```
+
+
+## Requested behavior (exact)
+
+"trying to make a standalone Android app (APK) that runs on the Quest 2 itself and acts as a control panel for Gorilla Tag–related system tweaks, specifically:
+
+1️⃣ A predictions (ms) slider
+
+The slider represents network prediction latency (for example 20–60 ms).
+
+Moving the slider changes a stored value the app uses when applying settings.
+
+The slider itself does nothing to FPS directly — it only sets numbers.
+
+2️⃣ Automatic refresh-rate (Hz) handling
+
+The app forces the Quest 2 to 70 Hz minimum.
+
+Predictions are set relative to Hz (example: 70 Hz → ~40 ms).
+
+This avoids FPS drops by never exceeding what the headset can sustain.
+
+3️⃣ Runs entirely from the headset
+
+No PC required after setup.
+
+No Termux.
+
+No Tasker.
+
+No external scripts.
+
+Just: open app → tap → done.
+
+4️⃣ Uses ADB-over-Wi-Fi internally
+
+The app talks to the Quest’s Android system using shell-level commands.
+
+That’s how refresh rate and prediction values are applied.
+
+This is why permissions and setup matter so much.
+
+5️⃣ Remembers the Quest’s IP address
+
+First launch: you enter or confirm the Quest IP.
+
+The app saves it locally.
+
+Future launches reuse it automatically.
+
+6️⃣ Optional Wi-Fi confirmation step
+
+The app asks something like:
+
+“Connect to example wifi?”
+
+This ensures the Quest is on the correct network before applying settings.
+
+This avoids failed ADB connections."
